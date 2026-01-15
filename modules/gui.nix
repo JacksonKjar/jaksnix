@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   # Fonts
   home.packages = with pkgs; [
     nerd-fonts.hack
@@ -11,10 +11,17 @@
       window.opacity = 0.9;
       window.option_as_alt = "OnlyLeft";
       keyboard.bindings = [
-        { key = "F"; mods = "Command|Shift"; action = "ToggleSimpleFullscreen"; }
+        {
+          key = "F";
+          mods = "Command|Shift";
+          action = "ToggleSimpleFullscreen";
+        }
       ];
       font = {
-        normal = { family = "Hack Nerd Font Mono"; style = "Regular";  };
+        normal = {
+          family = "Hack Nerd Font";
+          style = "Regular";
+        };
         size = 12;
       };
     };
