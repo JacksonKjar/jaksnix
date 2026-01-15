@@ -1,4 +1,9 @@
-{ ... }: {
+{ pkgs, ... }: {
+  # Fonts
+  home.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "Hack" ]; })
+  ];
+
   programs.alacritty = {
     enable = true;
     theme = "kanagawa_wave";
