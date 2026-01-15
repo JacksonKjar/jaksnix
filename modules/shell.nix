@@ -3,6 +3,11 @@
   lib,
   ...
 }: {
+  # Add ~/.local/bin to PATH
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
+
   programs.zsh = {
     enable = true;
     defaultKeymap = "viins";
