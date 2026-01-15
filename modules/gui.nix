@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   # Fonts
   home.packages = with pkgs; [
-    nerd-fonts.fira-code
+    nerd-fonts.hack
   ];
 
   programs.alacritty = {
@@ -19,7 +19,7 @@
       ];
       font = {
         normal = {
-          family = "FiraCode Nerd Font Mono";
+          family = "Hack Nerd Font Mono";
           style = "Regular";
         };
         size = 12;
