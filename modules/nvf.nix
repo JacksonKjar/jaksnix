@@ -50,14 +50,14 @@
       # Statusline
       statusline.lualine = {
         enable = true;
-        theme = "kanagawa";
+        theme = "gruvbox";
       };
 
       # Theme
       theme = {
         enable = true;
-        name = "kanagawa";
-        style = "wave";
+        name = "gruvbox";
+        style = "dark";
         transparent = false;
       };
 
