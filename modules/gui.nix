@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   # Fonts
   home.packages = with pkgs; [
-    nerd-fonts.hack
+    nerd-fonts.jetbrains-mono
   ];
 
   programs.alacritty = {
@@ -19,7 +19,7 @@
       ];
       font = {
         normal = {
-          family = "Hack Nerd Font";
+          family = "JetBrainsMono Nerd Font";
           style = "Regular";
         };
         size = 12;
