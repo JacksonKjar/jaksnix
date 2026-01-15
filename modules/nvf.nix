@@ -6,8 +6,26 @@
       viAlias = false;
       vimAlias = true;
 
+      # Custom keybindings
+      keymaps = [
+        {
+          key = "<leader>e";
+          mode = ["n"];
+          action = ":Neotree toggle<CR>";
+          silent = true;
+          desc = "Toggle file tree";
+        }
+        {
+          key = "<leader>o";
+          mode = ["n"];
+          action = ":Neotree focus<CR>";
+          silent = true;
+          desc = "Focus file tree";
+        }
+      ];
+
       # Spellcheck
-      spellcheck.enable = true;
+      spellcheck.enable = false;
 
       # LSP Configuration
       lsp = {
@@ -30,7 +48,7 @@
         kotlin.enable = true;
         scala.enable = true;
         python.enable = true;
-        
+
         # Useful extras
         markdown.enable = true;
         bash.enable = true;
