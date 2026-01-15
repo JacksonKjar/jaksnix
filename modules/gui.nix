@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   # Fonts
   home.packages = with pkgs; [
-    nerd-fonts.hack
     nerd-fonts.fira-code
   ];
 
@@ -20,7 +19,7 @@
       ];
       font = {
         normal = {
-          family = "Hack Nerd Font Mono";
+          family = "FiraCode Nerd Font Mono";
           style = "Regular";
         };
         size = 12;
