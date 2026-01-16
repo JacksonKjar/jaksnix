@@ -6,6 +6,16 @@
       viAlias = false;
       vimAlias = true;
 
+      # Editor settings
+      options = {
+        expandtab = true;
+        shiftwidth = 2;
+        tabstop = 2;
+        softtabstop = 2;
+        autoindent = true;
+        smartindent = true;
+      };
+
       # Custom keybindings
       keymaps = [
         {
@@ -95,7 +105,6 @@
       # Treesitter context (shows function/class at top when scrolling)
       treesitter = {
         context.enable = true;
-        indent.enable = true;
       };
 
       # Keybinding discovery
