@@ -93,7 +93,10 @@
       tabline.nvimBufferline.enable = true;
 
       # Treesitter context (shows function/class at top when scrolling)
-      treesitter.context.enable = true;
+      treesitter = {
+        context.enable = true;
+        indent.enable = true;
+      };
 
       # Keybinding discovery
       binds = {
@@ -118,6 +121,7 @@
       utility = {
         diffview-nvim.enable = true;
         surround.enable = true;
+
         icon-picker.enable = true;
       };
 
@@ -132,7 +136,6 @@
         borders.enable = true;
         noice.enable = true;
         colorizer.enable = true;
-        illuminate.enable = true; # highlight word under cursor
         breadcrumbs = {
           enable = true;
           navbuddy.enable = false; # keep breadcrumbs minimal
