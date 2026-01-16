@@ -93,7 +93,15 @@
       autopairs.nvim-autopairs.enable = true;
 
       # Autocomplete
-      autocomplete.blink-cmp.enable = true;
+      autocomplete.blink-cmp = {
+        enable = true;
+        setupOpts = {
+          completion.list.selection = {
+            preselect = false;
+            auto_insert = true;
+          };
+        };
+      };
       snippets.luasnip.enable = true;
 
       # File tree
