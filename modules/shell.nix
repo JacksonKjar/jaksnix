@@ -8,6 +8,12 @@
     "$HOME/.local/bin"
   ];
 
+  # Vi mode for readline (Python REPL, etc.)
+  home.file.".inputrc".text = ''
+    set editing-mode vi
+    set keymap vi-insert
+  '';
+
   programs.zsh = {
     enable = true;
     defaultKeymap = "viins";
