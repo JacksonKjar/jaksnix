@@ -26,48 +26,6 @@
       la = "ls -Al";
       zj = "zellij";
     };
-    initContent = ''
-      # Test nixfiles changes and rebuild home-manager
-      hmtest() {
-        local msg="''${1:-wip: testing changes}"
-        local nixfiles_dir="$HOME/.config/nixfiles"
-        local hm_dir="$HOME/.config/home-manager"
-        local has_changes=false
-        
-        echo "📦 Checking nixfiles changes..."
-        cd "$nixfiles_dir" || return 1
-        
-        if [[ -z $(git status --porcelain) ]]; then
-          echo "✓ No changes in nixfiles"
-        else
-          has_changes=true
-          echo "\n📝 Changes to commit:"
-          git diff --stat
-          echo ""
-          git add -A
-          git commit -m "$msg"
-          echo "✓ Committed changes"
-        fi
-        
-        echo "\n🔄 Updating flake and rebuilding..."
-        cd "$hm_dir" || return 1
-        nix flake update nixfiles
-        home-manager switch --flake .
-        
-        if [[ $? -eq 0 ]]; then
-          echo "\n✓ Rebuild successful!"
-          if [[ "$has_changes" == true ]]; then
-            echo "\n📤 Pushing to GitHub..."
-            cd "$nixfiles_dir"
-            git push
-            echo "✓ Pushed to GitHub"
-          fi
-        else
-          echo "\n✗ Rebuild failed - not pushing"
-          return 1
-        fi
-      }
-    '';
   };
 
   programs.starship = {
