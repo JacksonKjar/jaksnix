@@ -4,6 +4,10 @@
     nerd-fonts.fira-code
   ];
 
+  programs.obsidian = {
+    enable = true;
+  };
+
   programs.alacritty = {
     enable = true;
     theme = "kanagawa_wave";

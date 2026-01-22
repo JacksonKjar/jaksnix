@@ -149,8 +149,11 @@
       # Comments
       comments.comment-nvim.enable = true;
 
-      # Todo highlighting
-      notes.todo-comments.enable = true;
+      # Notes
+      notes = {
+        obsidian.enable = true;
+        todo-comments.enable = true;
+      };
 
       # UI enhancements
       ui = {
