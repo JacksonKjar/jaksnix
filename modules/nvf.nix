@@ -55,7 +55,7 @@
 
         # Core languages
         nix.enable = true;
-        nix.format.type = "nixfmt";
+        nix.format.type = [ "nixfmt" ];
 
         java.enable = true;
         kotlin.enable = true;
