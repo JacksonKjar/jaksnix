@@ -2,7 +2,8 @@
   inputs,
   lib,
   ...
-}: {
+}:
+{
   # Add ~/.local/bin to PATH
   home.sessionPath = [
     "$HOME/.local/bin"
@@ -26,6 +27,11 @@
       la = "ls -Al";
       zj = "zellij";
     };
+  };
+
+  programs.lazygit = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   programs.starship = {
@@ -70,9 +76,8 @@
   imports = [
     ./nvf.nix
   ];
+
   programs.nvf = {
     enable = true;
   };
-
-  programs.gitui.enable = true;
 }

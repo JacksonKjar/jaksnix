@@ -1,16 +1,13 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # Fonts
   home.packages = with pkgs; [
     nerd-fonts.fira-code
   ];
 
-  programs.obsidian = {
-    enable = true;
-  };
-
   programs.alacritty = {
     enable = true;
-    theme = "kanagawa_wave";
+    theme = "everforest_dark";
     settings = {
       window.opacity = 0.9;
       window.option_as_alt = "OnlyLeft";

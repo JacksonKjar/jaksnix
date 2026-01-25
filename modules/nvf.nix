@@ -1,5 +1,6 @@
-{inputs, ...}: {
-  imports = [inputs.nvf.homeManagerModules.default];
+{ inputs, ... }:
+{
+  imports = [ inputs.nvf.homeManagerModules.default ];
   programs.nvf = {
     enable = true;
     settings.vim = {
@@ -20,14 +21,14 @@
       keymaps = [
         {
           key = "<leader>e";
-          mode = ["n"];
+          mode = [ "n" ];
           action = ":Neotree toggle<CR>";
           silent = true;
           desc = "Toggle file tree";
         }
         {
           key = "<leader>o";
-          mode = ["n"];
+          mode = [ "n" ];
           action = ":Neotree focus<CR>";
           silent = true;
           desc = "Focus file tree";
@@ -54,10 +55,14 @@
 
         # Core languages
         nix.enable = true;
+        nix.format.type = "nixfmt";
+
         java.enable = true;
         kotlin.enable = true;
         scala.enable = true;
         python.enable = true;
+        rust.enable = true;
+        go.enable = true;
 
         # Useful extras
         markdown.enable = true;
@@ -78,14 +83,14 @@
       # Statusline
       statusline.lualine = {
         enable = true;
-        theme = "gruvbox";
+        theme = "everforest";
       };
 
       # Theme
       theme = {
         enable = true;
-        name = "gruvbox";
-        style = "dark";
+        name = "everforest";
+        style = "hard";
         transparent = false;
       };
 
@@ -151,7 +156,6 @@
 
       # Notes
       notes = {
-        obsidian.enable = true;
         todo-comments.enable = true;
       };
 
