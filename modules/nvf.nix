@@ -23,15 +23,33 @@
           key = "<leader>e";
           mode = [ "n" ];
           action = ":Neotree toggle<CR>";
-          silent = true;
           desc = "Toggle file tree";
         }
         {
           key = "<leader>o";
           mode = [ "n" ];
           action = ":Neotree focus<CR>";
-          silent = true;
           desc = "Focus file tree";
+        }
+
+        # Clipboard Copy/Paste
+        {
+          key = "<leader>y";
+          mode = [
+            "n"
+            "v"
+          ];
+          action = ''"+y'';
+          desc = "Yank to clipboard";
+        }
+        {
+          key = "<leader>p";
+          mode = [
+            "n"
+            "v"
+          ];
+          action = ''"+p'';
+          desc = "Paste from clipboard";
         }
       ];
 
