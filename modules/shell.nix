@@ -65,6 +65,7 @@
       push.default = "simple";
       push.autoSetupRemote = true;
       pull.rebase = true;
+      rebase.autostash = true;
     };
   };
 
