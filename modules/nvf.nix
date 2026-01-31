@@ -83,7 +83,10 @@
         go.enable = true;
 
         # Useful extras
-        markdown.enable = true;
+        markdown = {
+          enable = true;
+          lsp.enable = false;
+        };
         bash.enable = true;
         json.enable = true;
         lua.enable = true; # for nvim config
