@@ -102,17 +102,14 @@
       };
 
       # Statusline
-      statusline.lualine = {
-        enable = true;
-        theme = "everforest";
-      };
+      statusline.lualine.enable = true;
 
       # Theme
       theme = {
         enable = true;
-        name = "everforest";
-        style = "hard";
-        transparent = false;
+        name = "gruvbox";
+        style = "dark";
+        transparent = true;
       };
 
       # Autopairs
@@ -162,7 +159,10 @@
       };
 
       # Notifications
-      notify.nvim-notify.enable = true;
+      notify.nvim-notify = {
+        enable = true;
+        setupOpts.stages = "slide";
+      };
 
       # Utility
       utility = {

@@ -7,7 +7,7 @@
 
   programs.alacritty = {
     enable = true;
-    theme = "everforest_dark";
+    theme = "gruvbox_dark";
     settings = {
       window.opacity = 0.9;
       window.option_as_alt = "OnlyLeft";
