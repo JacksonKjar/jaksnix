@@ -29,8 +29,9 @@
             ];
 
             shellHook = ''
-              if [ ! -f build.gradle.kts ] && [ ! -f build.gradle ]; then
-                gradle init
+              if [ ! -d .git ]; then
+                git init
+                echo "Initialized git repository"
               fi
             '';
           };
