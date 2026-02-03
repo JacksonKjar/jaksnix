@@ -1,0 +1,5 @@
+.direnv/
+result
+.venv/
+__pycache__/
+*.pyc

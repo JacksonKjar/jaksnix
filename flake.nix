@@ -60,6 +60,14 @@
           path = ./templates/default;
           description = "Basic development environment with direnv";
         };
+        python = {
+          path = ./templates/python;
+          description = "Python development environment with uv";
+        };
+        typescript = {
+          path = ./templates/typescript;
+          description = "TypeScript development environment";
+        };
       };
 
       devShells = forAllSystems (

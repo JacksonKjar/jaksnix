@@ -1,15 +1,10 @@
 {
-  description = "Development environment";
+  description = "Python development environment with uv";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-  };
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
   outputs =
-    {
-      self,
-      nixpkgs,
-    }:
+    { nixpkgs, ... }:
     let
       systems = [
         "x86_64-linux"
@@ -28,15 +23,15 @@
         {
           default = pkgs.mkShell {
             packages = with pkgs; [
-              # Add your development tools here
+              uv
+              python3
             ];
 
             shellHook = ''
-              if [ ! -d .git ]; then
-                git init
-                echo "Initialized git repository"
+              if [ ! -f pyproject.toml ]; then
+                uv init
+                echo "Initialized Python project with uv"
               fi
-              echo "Development environment loaded"
             '';
           };
         }

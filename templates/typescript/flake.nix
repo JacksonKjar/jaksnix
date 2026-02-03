@@ -1,15 +1,10 @@
 {
-  description = "Development environment";
+  description = "TypeScript development environment";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-  };
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
   outputs =
-    {
-      self,
-      nixpkgs,
-    }:
+    { nixpkgs, ... }:
     let
       systems = [
         "x86_64-linux"
@@ -28,7 +23,8 @@
         {
           default = pkgs.mkShell {
             packages = with pkgs; [
-              # Add your development tools here
+              nodejs
+              typescript
             ];
 
             shellHook = ''
@@ -36,7 +32,6 @@
                 git init
                 echo "Initialized git repository"
               fi
-              echo "Development environment loaded"
             '';
           };
         }
