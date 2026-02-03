@@ -68,6 +68,10 @@
           path = ./templates/typescript;
           description = "TypeScript development environment";
         };
+        kotlin = {
+          path = ./templates/kotlin;
+          description = "Kotlin development environment with Gradle";
+        };
       };
 
       devShells = forAllSystems (
