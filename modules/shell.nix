@@ -27,6 +27,11 @@
       la = "ls -Al";
       zj = "zellij";
     };
+    initContent = ''
+      nfit() {
+        nix flake init -t "git+ssh://git@github.com/JacksonKjar/nixfiles#$1"
+      }
+    '';
   };
 
   programs.lazygit = {
@@ -62,6 +67,7 @@
       user.name = "Jackson Kjar";
       user.email = lib.mkDefault "jackson@kjar.me";
       color.ui = "auto";
+      init.defaultBranch = "main";
       push.default = "simple";
       push.autoSetupRemote = true;
       pull.rebase = true;
