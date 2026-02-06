@@ -45,7 +45,6 @@
         ls = "eza";
         la = "ls -Al";
         zj = "zellij";
-        cd = "z";
       };
       initContent = ''
         nfit() {
@@ -98,11 +97,6 @@
     helix = {
       enable = true;
       settings.theme = "kanagawa";
-    };
-
-    zoxide = {
-      enable = true;
-      enableZshIntegration = true;
     };
 
     fzf = {
