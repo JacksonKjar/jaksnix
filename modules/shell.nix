@@ -66,6 +66,7 @@
     zellij = {
       enable = true;
       settings.theme = "ansi";
+      settings.show_startup_tips = false;
     };
 
     direnv = {
