@@ -24,6 +24,9 @@
     choose # better cut/awk
     dust # better du
     duf # better df
+    (writeShellScriptBin "polars-shell" ''
+      ${python3.withPackages (ps: [ ps.ipython ps.polars ])}/bin/ipython -i -c "import polars as pl"
+    '')
   ];
 
   programs = {
