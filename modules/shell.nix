@@ -24,6 +24,7 @@
     choose # better cut/awk
     dust # better du
     duf # better df
+    awscli2
     (writeShellScriptBin "polars-shell" ''
       ${
         python3.withPackages (ps: [
@@ -41,7 +42,6 @@
     jq.enable = true;
     fd.enable = true;
     htop.enable = true;
-    awscli.enable = true;
 
     zsh = {
       enable = true;
