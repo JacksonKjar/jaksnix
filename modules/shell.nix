@@ -25,7 +25,12 @@
     dust # better du
     duf # better df
     (writeShellScriptBin "polars-shell" ''
-      ${python3.withPackages (ps: [ ps.ipython ps.polars ])}/bin/ipython -i -c "import polars as pl"
+      ${
+        python3.withPackages (ps: [
+          ps.ipython
+          ps.polars
+        ])
+      }/bin/ipython -i -c "import polars as pl"
     '')
   ];
 
@@ -36,6 +41,7 @@
     jq.enable = true;
     fd.enable = true;
     htop.enable = true;
+    awscli.enable = true;
 
     zsh = {
       enable = true;
