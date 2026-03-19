@@ -59,7 +59,7 @@
       # LSP Configuration
       lsp = {
         enable = true;
-        formatOnSave = true;
+        formatOnSave = false;
         lightbulb.enable = true;
         trouble.enable = true;
         lspSignature.enable = false; # conflicts with blink-cmp
