@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [ inputs.nvf.homeManagerModules.default ];
   programs.nvf = {
@@ -81,6 +81,7 @@
         python.enable = true;
         rust.enable = true;
         go.enable = true;
+        clojure.enable = true;
 
         # Useful extras
         markdown = {
@@ -92,6 +93,7 @@
         lua.enable = true; # for nvim config
       };
 
+      repl.conjure.enable = true;
       # Visual enhancements
       visuals = {
         nvim-web-devicons.enable = true;
@@ -198,6 +200,19 @@
             scala = "120";
             python = "88";
           };
+        };
+      };
+      lazy.plugins = with pkgs.vimPlugins; {
+        nvim-paredit = {
+          package = nvim-paredit;
+          setupModule = "nvim-paredit";
+          ft = [
+            "clojure"
+            "fennel"
+            "scheme"
+            "lisp"
+            "janet"
+          ];
         };
       };
     };
