@@ -25,6 +25,7 @@
     dust # better du
     duf # better df
     awscli2
+    babashka # interactive clojure
     (writeShellScriptBin "polars-shell" ''
       ${
         python3.withPackages (ps: [
