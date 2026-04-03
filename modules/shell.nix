@@ -43,6 +43,7 @@
     jq.enable = true;
     fd.enable = true;
     htop.enable = true;
+    uv.enable = true;
 
     zsh = {
       enable = true;
