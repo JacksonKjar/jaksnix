@@ -76,7 +76,7 @@
 
     zellij = {
       enable = true;
-      settings.theme = "ansi";
+      settings.theme = lib.mkDefault "ansi";
       settings.show_startup_tips = false;
     };
 
