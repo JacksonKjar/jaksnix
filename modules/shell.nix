@@ -25,15 +25,15 @@
     dust # better du
     duf # better df
     awscli2
-    babashka # interactive clojure
-    (writeShellScriptBin "polars-shell" ''
-      ${
-        python3.withPackages (ps: [
-          ps.ipython
-          ps.polars
-        ])
-      }/bin/ipython -i -c "import polars as pl"
-    '')
+    duckdb
+    nodejs
+    (python3.withPackages (ps: with ps; [
+      ipython
+      numpy
+      polars
+      pandas
+      matplotlib
+    ]))
   ];
 
   programs = {
