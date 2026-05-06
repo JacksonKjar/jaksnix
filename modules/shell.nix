@@ -44,6 +44,7 @@
     fd.enable = true;
     htop.enable = true;
     uv.enable = true;
+    nushell.enable = true;
 
     zsh = {
       enable = true;
