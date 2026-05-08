@@ -74,7 +74,7 @@
         # Core languages
         nix = {
           enable = true;
-          format.type = "nixfmt";
+          format.type = [ "nixfmt" ];
         };
         java.enable = true;
         kotlin.enable = true;
@@ -91,7 +91,7 @@
         markdown = {
           enable = true;
           lsp.servers = [ "rumdl" ];
-          format.type = "rumdl";
+          format.type = [ "rumdl" ];
         };
         bash.enable = true;
         json.enable = true;
