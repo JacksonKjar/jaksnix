@@ -222,4 +222,10 @@
       };
     };
   };
+
+  # markdown lsp - enable fixing line length
+  home.file.".config/rumdl/rumdl.toml".text = ''
+    [MD013]
+    reflow = true
+  '';
 }
