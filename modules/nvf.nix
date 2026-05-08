@@ -98,7 +98,10 @@
         lua.enable = true; # for nvim config
       };
 
-      formatter.conform-nvim.setupOpts.formatters.rumdl.args = [ "--config" "MD013.reflow=true" ];
+      formatter.conform-nvim.setupOpts.formatters.rumdl.prepend_args = [
+        "--config"
+        "MD013.reflow=true"
+      ];
 
       repl.conjure.enable = true;
       # Visual enhancements
