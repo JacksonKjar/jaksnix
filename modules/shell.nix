@@ -59,7 +59,7 @@
         ls = "eza";
         la = "ls -Al";
         zj = "zellij";
-        py = "ipython";
+        py = "python";
       };
       initContent = ''
         nfit() {
