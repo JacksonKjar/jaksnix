@@ -27,13 +27,15 @@
     awscli2
     duckdb
     nodejs
-    (python3.withPackages (ps: with ps; [
-      ipython
-      numpy
-      polars
-      pandas
-      matplotlib
-    ]))
+    (python3.withPackages (
+      ps: with ps; [
+        ipython
+        numpy
+        polars
+        pandas
+        matplotlib
+      ]
+    ))
   ];
 
   programs = {
@@ -57,6 +59,7 @@
         ls = "eza";
         la = "ls -Al";
         zj = "zellij";
+        py = "ipython";
       };
       initContent = ''
         nfit() {
