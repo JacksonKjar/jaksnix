@@ -72,12 +72,16 @@
         enableExtraDiagnostics = true;
 
         # Core languages
-        nix.enable = true;
-        nix.format.type = [ "nixfmt" ];
-
+        nix = {
+          enable = true;
+          format.type = "nixfmt";
+        };
         java.enable = true;
         kotlin.enable = true;
-        scala.enable = true;
+        scala = {
+          enable = true;
+          lsp.enable = false;
+        };
         python.enable = true;
         rust.enable = true;
         go.enable = true;
@@ -86,7 +90,8 @@
         # Useful extras
         markdown = {
           enable = true;
-          lsp.enable = false;
+          lsp.servers = [ "rumdl" ];
+          format.type = "rumdl";
         };
         bash.enable = true;
         json.enable = true;
