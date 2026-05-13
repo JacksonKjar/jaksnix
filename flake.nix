@@ -16,82 +16,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mac-app-util.url = "github:hraban/mac-app-util";
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
   outputs =
-    {
-      nixpkgs,
-      home-manager,
-      ...
-    }@inputs:
-    let
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [ inputs.flake-parts.flakeModules.modules ] ++ import ./modules;
       systems = [
         "x86_64-linux"
         "aarch64-linux"
         "x86_64-darwin"
         "aarch64-darwin"
       ];
-      forAllSystems = nixpkgs.lib.genAttrs systems;
-      homeModules = {
-        shell = ./modules/shell.nix;
-        gui = ./modules/gui.nix;
-        nix = ./modules/nix.nix;
-        nvf = ./modules/nvf.nix;
-      };
-      darwinModules = { };
-    in
-    {
-      # Home Manager modules (cross-platform)
-      inherit homeModules;
-      inherit darwinModules;
-
-      homeConfigurations."jaks" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-        extraSpecialArgs = { inherit inputs; };
-
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ ./hm-configs/jaks.nix ] ++ builtins.attrValues homeModules;
-      };
-
-      # Templates
-      templates = {
-        default = {
-          path = ./templates/default;
-          description = "Basic development environment with direnv";
-        };
-        python = {
-          path = ./templates/python;
-          description = "Python development environment with uv";
-        };
-        typescript = {
-          path = ./templates/typescript;
-          description = "TypeScript development environment";
-        };
-        kotlin = {
-          path = ./templates/kotlin;
-          description = "Kotlin development environment with Gradle";
-        };
-      };
-
-      devShells = forAllSystems (
-        system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-        in
-        {
-          default = pkgs.mkShell {
-            packages = with pkgs; [
-              # Add your development tools here
-            ];
-
-            shellHook = ''
-              echo "Development environment loaded"
-            '';
-          };
-        }
-      );
-
-      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
     };
 }

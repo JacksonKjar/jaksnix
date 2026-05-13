@@ -1,0 +1,10 @@
+[
+  ./devshell.nix
+  ./formatter.nix
+  ./templates.nix
+  ./home.nix
+  ./shell.nix
+  ./gui.nix
+  ./nix.nix
+  ./nvf.nix
+]
