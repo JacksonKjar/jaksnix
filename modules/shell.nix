@@ -34,7 +34,6 @@
       ];
 
       programs = {
-        nvf.enable = true;
         ripgrep.enable = true;
         bat.enable = true;
         jq.enable = true;

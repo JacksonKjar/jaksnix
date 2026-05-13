@@ -17,12 +17,16 @@
     };
     mac-app-util.url = "github:hraban/mac-app-util";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
   };
 
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ inputs.flake-parts.flakeModules.modules ] ++ import ./modules;
+      imports = [
+        inputs.flake-parts.flakeModules.modules
+        (inputs.import-tree ./modules)
+      ];
       systems = [
         "x86_64-linux"
         "aarch64-linux"

@@ -12,6 +12,7 @@
         home.file = { };
         home.sessionVariables = { };
       }
-    ] ++ builtins.attrValues config.flake.modules.homeManager;
+    ]
+    ++ builtins.attrValues config.flake.modules.homeManager;
   };
 }
