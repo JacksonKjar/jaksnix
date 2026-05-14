@@ -1,12 +1,20 @@
 { ... }:
 {
   flake.modules.homeManager.shell =
-    { pkgs, lib, ... }:
+    {
+      pkgs,
+      lib,
+      config,
+      ...
+    }:
     {
       # Add ~/.local/bin to PATH
       home.sessionPath = [
         "$HOME/.local/bin"
       ];
+
+      home.file.".terminfo".source =
+        config.lib.file.mkOutOfStoreSymlink "${config.home.profileDirectory}/share/terminfo";
 
       # Vi mode for readline (Python REPL, etc.)
       home.file.".inputrc".text = ''
@@ -15,6 +23,7 @@
       '';
 
       home.packages = with pkgs; [
+        alacritty.terminfo
         tldr # better man
         choose # better cut/awk
         dust # better du
