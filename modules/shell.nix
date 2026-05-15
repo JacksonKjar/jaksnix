@@ -13,6 +13,10 @@
         "$HOME/.local/bin"
       ];
 
+      home.sessionVariables = {
+        EDITOR = "vim";
+      };
+
       home.file.".terminfo".source =
         config.lib.file.mkOutOfStoreSymlink "${config.home.profileDirectory}/share/terminfo";
 
