@@ -18,6 +18,7 @@
     mac-app-util.url = "github:hraban/mac-app-util";
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
   };
 
   outputs =
