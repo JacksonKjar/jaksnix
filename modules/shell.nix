@@ -58,6 +58,7 @@
 
         zsh = {
           enable = true;
+          dotDir = "${config.home.homeDirectory}/.config/zsh";
           defaultKeymap = "viins";
           autosuggestion.enable = true;
           syntaxHighlighting.enable = true;
@@ -69,11 +70,17 @@
             zj = "zellij";
             py = "python";
           };
-          initContent = ''
-            nfit() {
-              nix flake init -t "git+ssh://git@github.com/JacksonKjar/nixfiles#$1"
-            }
-          '';
+          initContent = lib.mkMerge [
+            ''
+              nfit() {
+                nix flake init -t "git+ssh://git@github.com/JacksonKjar/nixfiles#$1"
+              }
+            ''
+            (lib.mkOrder 2000 ''
+              # Source per-machine zshrc (out-of-store symlink, freely editable)
+              [[ -f ~/.zshrc ]] && source ~/.zshrc
+            '')
+          ];
         };
 
         lazygit = {
