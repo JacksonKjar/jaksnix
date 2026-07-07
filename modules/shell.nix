@@ -35,6 +35,7 @@
         awscli2
         duckdb
         nodejs
+        jdk25
         (python3.withPackages (
           ps: with ps; [
             ipython
