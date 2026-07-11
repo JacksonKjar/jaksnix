@@ -10,7 +10,9 @@
     homebrew = {
       enable = true;
       casks = [
-        "zen"
+        "firefox"
+        "google-chrome"
+        "codex-app"
       ];
     };
   };
