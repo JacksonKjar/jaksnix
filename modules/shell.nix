@@ -113,6 +113,7 @@
 
         git = {
           enable = true;
+          lfs.enable = true;
           settings = {
             user.name = "Jackson Kjar";
             user.email = lib.mkDefault "jackson@kjar.me";
