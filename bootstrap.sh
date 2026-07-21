@@ -18,9 +18,9 @@ err()   { printf '\033[1;31m✗\033[0m %s\n' "$*" >&2; exit 1; }
 if command -v nix &>/dev/null; then
   ok "Nix already installed ($(nix --version))"
 else
-  info "Installing Nix via Determinate Systems installer..."
+  info "Installing Nix via Determinate Systems installer (rootless)..."
   curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix \
-    | sh -s -- install --no-confirm
+    | sh -s -- install linux --init none --no-confirm
   # Source nix daemon env for this shell
   if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
     . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
