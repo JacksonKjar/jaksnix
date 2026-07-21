@@ -1,4 +1,4 @@
-# nixfiles
+# jaksnix
 
 Personal Nix configuration modules for home-manager.
 
@@ -14,8 +14,8 @@ Personal Nix configuration modules for home-manager.
 Add to your flake inputs:
 
 ```nix
-inputs.nixfiles = {
-  url = "github:yourusername/nixfiles";
+inputs.jaksnix = {
+  url = "github:JacksonKjar/jaksnix";
   inputs.nixpkgs.follows = "nixpkgs";
   inputs.home-manager.follows = "home-manager";
 };
@@ -25,8 +25,8 @@ Import modules:
 
 ```nix
 imports = [
-  inputs.nixfiles.homeModules.shell
-  inputs.nixfiles.homeModules.gui
-  inputs.nixfiles.homeModules.nix
+  inputs.jaksnix.homeModules.shell
+  inputs.jaksnix.homeModules.gui
+  inputs.jaksnix.homeModules.nix
 ];
 ```

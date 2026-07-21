@@ -73,7 +73,7 @@
           initContent = lib.mkMerge [
             ''
               nfit() {
-                nix flake init -t "git+ssh://git@github.com/JacksonKjar/nixfiles#$1"
+                nix flake init -t "git+ssh://git@github.com/JacksonKjar/jaksnix#$1"
               }
             ''
             (lib.mkOrder 2000 ''
