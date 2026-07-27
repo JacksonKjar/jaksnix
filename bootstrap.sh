@@ -34,17 +34,14 @@ else
     . "$HOME/.nix-profile/etc/profile.d/nix.sh"
   fi
   ok "Nix installed ($(nix --version))"
-
-  # Enable flakes (not on by default with vanilla installer)
-  mkdir -p ~/.config/nix
-  grep -q "experimental-features" ~/.config/nix/nix.conf 2>/dev/null || \
-    echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 fi
 
 # --- 2. Run home-manager switch ---
 info "Activating home-manager configuration '${CONFIG}' from ${REPO}..."
 
-nix run "${REPO}#homeConfigurations.${CONFIG}.activationPackage" --no-write-lock-file --impure
+nix run "${REPO}#homeConfigurations.${CONFIG}.activationPackage" \
+  --no-write-lock-file --impure \
+  --extra-experimental-features "nix-command flakes"
 
 ok "Done! Open a new shell or run: exec \$SHELL -l"
 echo ""
