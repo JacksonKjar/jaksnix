@@ -13,6 +13,7 @@
         "firefox"
         "google-chrome"
         "codex-app"
+        "ghostty"
       ];
     };
   };

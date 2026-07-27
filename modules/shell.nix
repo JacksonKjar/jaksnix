@@ -89,6 +89,11 @@
           enableZshIntegration = true;
         };
 
+        gh = {
+          enable = true;
+          gitCredentialHelper.enable = true;
+        };
+
         starship = {
           enable = true;
           enableZshIntegration = true;

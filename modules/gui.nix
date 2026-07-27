@@ -8,6 +8,10 @@
         nerd-fonts.fira-code
       ];
 
+      xdg.configFile."ghostty/config.ghostty".text = ''
+        theme = Gruvbox Dark Hard
+      '';
+
       programs.alacritty = {
         enable = true;
         theme = "gruvbox_dark";
