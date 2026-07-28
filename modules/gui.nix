@@ -10,7 +10,7 @@
 
       xdg.configFile."ghostty/config.ghostty".text = ''
         theme = Gruvbox Dark Hard
-        env = TERM=xterm-256color
+        term = xterm-256color
       '';
 
       programs.alacritty = {
