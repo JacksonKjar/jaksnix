@@ -28,7 +28,6 @@
 
       home.packages = with pkgs; [
         alacritty.terminfo
-        ghostty.terminfo
         tldr # better man
         choose # better cut/awk
         dust # better du
